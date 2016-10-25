@@ -1,0 +1,284 @@
+@font-face {
+  font-family: "Mi Calibri";
+  src: url("fonts/calibri.woff");
+}
+
+body {
+  background-color: #F1F1F1;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: "Mi Calibri";
+  color: #000;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+main {
+  width: 750px;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+main h1 {
+  margin: 0 0 0 0;
+  padding: 0 0 .2em 0;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+main #json {
+  margin: 1em 0;
+  padding-bottom: 1em;
+  border-bottom: .1em solid #E2E2E2;
+}
+
+main #json:before {
+  content: "{";
+  font-weight: bold;
+}
+
+main #json:after {
+  content: "}";
+  font-weight: bold;
+}
+
+main ol {
+  padding: 0;
+  background-color: #fff;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+main ol li {
+  padding: 0 0 0 .2em;
+  margin: 0 0 .5em .8em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 26px;
+}
+
+main ol li b {
+  width: 3%;
+  color: #D5D5D5;
+  margin-right: .5%;
+  font-weight: normal;
+}
+
+main ol li span, main ol li input[type="text"] {
+  border: 0;
+  padding: .2em;
+  background-color: #fff;
+  color: #000;
+  font-size: 1em;
+}
+
+main ol li span:nth-child(2), main ol li input[type="text"]:nth-child(2) {
+  width: 23%;
+  margin-right: 1%;
+}
+
+main ol li span:nth-child(2):before, main ol li input[type="text"]:nth-child(2):before {
+  content: "\" ";
+}
+
+main ol li span:nth-child(2):after, main ol li input[type="text"]:nth-child(2):after {
+  content: " \" :";
+}
+
+main ol li span:nth-child(3), main ol li input[type="text"]:nth-child(3) {
+  width: 65.5%;
+  margin-right: 5px;
+}
+
+main ol li span:nth-child(3):before, main ol li input[type="text"]:nth-child(3):before {
+  content: "\" ";
+}
+
+main ol li span:nth-child(3):after, main ol li input[type="text"]:nth-child(3):after {
+  content: " \",";
+}
+
+main ol li input[type="text"] {
+  border: 1px solid #D5D5D5;
+  border-radius: 2px;
+}
+
+main ol li button {
+  display: none;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  background-color: transparent;
+  border: 0;
+  background-repeat: no-repeat;
+}
+
+main ol li button.borrar {
+  background-image: url("img/sprite.png");
+  background-position: center 5px;
+}
+
+main ol li button.borrar:hover {
+  background-position: center -26px;
+}
+
+main ol li button.editar {
+  margin-right: 0;
+  background-image: url("img/sprite.png");
+  background-position: center -62px;
+}
+
+main ol li button.editar:hover {
+  background-position: center -97px;
+}
+
+main ol li button.cancelar {
+  background-image: url("img/sprite.png");
+  background-position: 4px -163px;
+}
+
+main ol li button.guardar {
+  background-image: url("img/sprite.png");
+  background-position: 4px -128px;
+}
+
+main ol li button.cancelar, main ol li button.guardar {
+  display: none;
+}
+
+main ol li button:hover {
+  cursor: pointer;
+  background-color: #EFF1EC;
+}
+
+main ol li button:active {
+  position: relative;
+  top: 1px;
+}
+
+main ol li.editando {
+  border: 0 !important;
+}
+
+main ol li.editando button.editar, main ol li.editando button.borrar {
+  display: none !important;
+}
+
+main ol li.editando button.cancelar, main ol li.editando button.guardar {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main ol li:hover {
+  border: 1px solid #EFF1EC;
+}
+
+main ol li:hover .borrar, main ol li:hover .editar {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main ol li:last-child {
+  margin-bottom: 0;
+}
+
+main ol li:last-child span:nth-child(3):after {
+  content: " \"";
+}
+
+main #update-add {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #update-add form input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+main #update-add form:first-child {
+  margin-right: auto;
+}
+
+main #update-add form:first-child input[type="submit"] {
+  font-size: 1em;
+  padding: .28em 1em;
+  background-color: #F8F8F8;
+  border: 1px solid #D3D3D3;
+  border-radius: 2px;
+  color: #000;
+}
+
+main #update-add form:first-child input[type="submit"]:hover {
+  background-color: #F0F0F0;
+}
+
+main #update-add form:first-child input[type="text"] {
+  font-size: 1em;
+  padding: .3em;
+  border: 1px solid #D5D5D5;
+  border-radius: 1px;
+}
+
+main #update-add form:first-child input[type="text"]:first-child {
+  margin-right: 3px;
+}
+
+main #update-add form:last-child input[type="submit"] {
+  font-size: 1em;
+  padding: .28em 1em;
+  background-color: #444444;
+  color: #fff;
+  border: 0;
+  border-radius: 2px;
+}
+
+main #update-add form:last-child input[type="submit"]:hover {
+  background-color: #000;
+}
+
+footer {
+  margin: 0 auto;
+}
+
+footer a {
+  color: #000;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
